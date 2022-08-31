@@ -24,12 +24,10 @@ const App = () => {
   const inputChangeHandler = (e) => {
     const inputValue = e.target.value;
     setInputState(inputValue);
-    if (inputValue) {
-      if (!emojis.includes(inputValue)) {
-        return setMeaningState("Cannot recognize emoji");
-      }
-      setMeaningState(emojiData[inputValue]);
+    if (!emojis.includes(inputValue)) {
+      return setMeaningState("Cannot recognize emoji");
     }
+    setMeaningState(emojiData[inputValue]);
   };
 
   const emojiClickHandler = (e) => {
